@@ -38,7 +38,7 @@ export default function AboutPage() {
 
             <Divider sx={{ my: 3, borderStyle: "dashed", borderColor: "#cbd5e1" }} />
 
-            <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5, textAlign: "left" }}>
+            <Box sx={{ display: "flex", flexDirection: "column", gap: 2.5, textAlign: "left", mb: 2 }}>
               <Box>
                 <Typography sx={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: 0.5 }}>รายวิชา (Course)</Typography>
                 <Typography sx={{ fontWeight: 700, color: "#334155", fontSize: "1.05rem" }}>Front-end Web Programming</Typography>
@@ -58,6 +58,34 @@ export default function AboutPage() {
                 <Typography sx={{ fontSize: "0.75rem", fontWeight: 800, color: "#94a3b8", textTransform: "uppercase", letterSpacing: 0.5 }}>มหาวิทยาลัย (University)</Typography>
                 <Typography sx={{ fontWeight: 700, color: "#334155", fontSize: "1.05rem" }}>มหาวิทยาลัยขอนแก่น วิทยาเขตหนองคาย</Typography>
               </Box>
+            </Box>
+
+            <Divider sx={{ my: 3, borderStyle: "solid", borderColor: "#f1f5f9" }} />
+
+            {/* เพิ่มปุ่มสำหรับเชื่อมโยงไปยัง GitHub Source Code */}
+            <Box sx={{ textAlignment: "center" }}>
+              <Button
+                variant="outlined"
+                href="https://github.com/sophonwit19/pokemon-app.git"
+                target="_blank"
+                rel="noopener noreferrer"
+                fullWidth
+                sx={{
+                  borderRadius: 3,
+                  py: 1.2,
+                  fontWeight: 800,
+                  color: "#24292e",
+                  borderColor: "#cfd8dc",
+                  textTransform: "none",
+                  fontSize: "0.95rem",
+                  "&:hover": {
+                    bgcolor: "#f6f8fa",
+                    borderColor: "#24292e",
+                  }
+                }}
+              >
+                📁 GitHub Source Code
+              </Button>
             </Box>
 
           </CardContent>
@@ -80,7 +108,7 @@ export default function AboutPage() {
               "&:hover": { transform: "translateY(-2px)", boxShadow: "0 8px 24px rgba(255, 78, 80, 0.3)" } 
             }}
           >
-             กลับสู่หน้าหลัก
+              กลับสู่หน้าหลัก
           </Button>
         </Box>
 
