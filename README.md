@@ -48,17 +48,6 @@
 <img width="947" height="818" alt="image" src="https://github.com/user-attachments/assets/97f5ef80-aa85-4cd1-bd94-39c96e1ea4a5" />
 
 
----
-
-## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
-
-* **Frontend Framework:** Next.js 14+ / React.js (TypeScript)
-* **Styling & UI Components:** Material UI (MUI) ออกแบบการ์ดแบบโมเดิร์นโค้งมนพร้อมพื้นหลังไล่เฉดสีตามธาตุโปเกมอน
-* **Data API:** PokeAPI (RESTful API) ดึงข้อมูลผ่าน Fetch API แบบเรียลไทม์
-* **Deployment Platform:** Vercel
-
----
-
 ## 🚀 การติดตั้งเพื่อพัฒนาต่อ (Installation & Setup)
 
 1. คลอนรีโพซิทอรีลงเครื่องคอมพิวเตอร์ของคุณ:
