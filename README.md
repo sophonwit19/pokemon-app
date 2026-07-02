@@ -39,7 +39,9 @@
 
 ### 1. หน้าหลัก (Pokédex Home Page)
 แสดงรายการโปเกมอนทั้งหมดในรูปแบบ Grid Card
-<img width="897" height="876" alt="image" src="https://github.com/user-attachments/assets/f9ae33a5-d868-48e5-b1c4-98e6c3d41f79" />
+<img width="1808" height="875" alt="image" src="https://github.com/user-attachments/assets/6308d55a-d5b9-4038-9262-c597103d03cb" />
+<img width="687" height="857" alt="image" src="https://github.com/user-attachments/assets/50dd3700-9cba-49ee-942c-74039b82d31e" />
+
 
 ### 2. หน้าเกี่ยวกับผู้พัฒนา (About This Project)
 หน้าเพจจัดแสดงประวัติ ข้อมูลรายวิชา และรายละเอียดของผู้พัฒนาโปรเจกต์อย่างเป็นระบบ 
