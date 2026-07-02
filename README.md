@@ -3,7 +3,6 @@
 เว็บแอปพลิเคชันสารานุกรมโปเกมอน (Pokédex) ที่ดึงข้อมูลแบบ Real-time มาแสดงผลในรูปแบบการ์ดที่สวยงาม ค้นหาง่าย และสลับหน้าดูข้อมูลได้อย่างลื่นไหล รองรับการแสดงผลสมบูรณ์แบบบนทุกอุปกรณ์
 
 > 🌐 **Live Demo:** [https://pokemon-app-two-gamma.vercel.app/](https://pokemon-app-two-gamma.vercel.app/)
-> 📁 **GitHub Repository:** [https://github.com/sophonwit19/pokemon-app.git](https://github.com/sophonwit19/pokemon-app.git)
 
 ---
 
