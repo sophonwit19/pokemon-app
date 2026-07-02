@@ -45,7 +45,8 @@
 
 ### 2. หน้าเกี่ยวกับผู้พัฒนา (About This Project)
 หน้าเพจจัดแสดงประวัติ ข้อมูลรายวิชา และรายละเอียดของผู้พัฒนาโปรเจกต์อย่างเป็นระบบ 
-![Uploading image.png…]()
+<img width="947" height="818" alt="image" src="https://github.com/user-attachments/assets/97f5ef80-aa85-4cd1-bd94-39c96e1ea4a5" />
+
 
 ---
 
