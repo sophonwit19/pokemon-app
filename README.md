@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡ Pokémon World App
 
-## Getting Started
+เว็บแอปพลิเคชันสำหรับค้นหา คัดกรอง และแสดงข้อมูลโปเกมอนทั่วโลก ดึงข้อมูลแบบ Real-time จาก **PokeAPI** โดยพัฒนาขึ้นด้วยเทคโนโลยี Next.js (App Router) และออกแบบหน้าจอให้สวยงามทันสมัย รองรับทุกอุปกรณ์ (Responsive Design) ด้วย Material UI (MUI)
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 รายละเอียดโปรเจกต์ (Project Overview)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+โปรเจกต์นี้ได้รับการพัฒนาและอัปเดตระบบขึ้นเพื่อแก้ปัญหาข้อจำกัดของโครงสร้างเดิม โดยมีฟีเจอร์เด่นและจุดปรับปรุงดังนี้:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+* **รองรับข้อมูลโปเกมอนครบ 1,351 ตัว:** ปรับปรุงระบบการดึงข้อมูลเพื่อให้สามารถแสดงผลร่างพิเศษ ร่าง Mega หรือร่าง Gigantamax (กลุ่มรหัส ID หลักหมื่น) ได้อย่างสมบูรณ์แบบโดยที่แอปไม่พัง
+* **ระบบจัดเรียงลำดับ ID ต่อเนื่อง (#1026 - #1351):** แก้ไขปัญหาเลข ID ข้ามหลุดไปหลักหมื่นบนหน้าจอ โดยการใช้ระบบรันลำดับเลขต่อเนื้องกันตั้งแต่ `#001` ไปจนถึงตัวสุดท้ายที่ `#1351` อย่างสวยงามและเป็นระเบียบ
+* **ระบบแบ่งหน้า (Pagination):** เปลี่ยนจากระบบกดปุ่ม "ดูตัวถัดไป" มาเป็นแถวระบุเลขหน้า (Pagination Controls) ของ Material UI ช่วยให้ผู้ใช้งานระบุและข้ามไปยังหน้าข้อมูลที่ต้องการได้อย่างรวดเร็ว (แสดงผลหน้าละ 20 ตัว)
+* **ค้นหาและคัดกรองอย่างอัจฉริยะ (Search & Filter):** สามารถค้นหาโปเกมอนตามชื่อภาษาอังกฤษ พร้อมกล่องเลือกคัดกรองตามธาตุ (Types) โดยการ์ดจะเปลี่ยนสี Gradient ตามธาตุหลักของโปเกมอนตัวนั้น ๆ โดยอัตโนมัติ
+* **การออกแบบที่รองรับทุกอุปกรณ์ (Responsive Design):** หน้าจอเว็บสามารถปรับเปลี่ยนเลเอาต์ (Layout) ยืด-หดจำนวนคอลัมน์ และสลับตำแหน่งกล่องค้นหาตามขนาดหน้าจอได้อย่างเหมาะสม ไม่ว่าจะเป็นสมาร์ตโฟน แท็บเล็ต หรือคอมพิวเตอร์
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ เทคโนโลยีที่ใช้ (Tech Stack)
 
-To learn more about Next.js, take a look at the following resources:
+* **Framework:** Next.js 14+ (TypeScript)
+* **UI Library:** Material UI (MUI)
+* **API Source:** [PokeAPI v2](https://pokeapi.co/)
+* **Deployment Platform:** Vercel
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📷 ภาพตัวอย่างแอปพลิเคชัน (Screenshots)
 
-## Deploy on Vercel
+*หมายเหตุ: คุณโสภณวิชญ์สามารถนำลิงก์รูปภาพสกรีนช็อตของแอปพลิเคชันจริงมาใส่แทนที่เครื่องหมายคำพูดในโค้ดด้านล่างนี้ได้เลยครับ*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### 1. หน้าหลักพร้อมระบบ Pagination และการเรียงลำดับ ID ล่าสุด จนถึงตัวที่ #1351
+![Main Page Screenshot](https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### 2. หน้าข้อมูลส่วนตัวผู้พัฒนา (About Page)
+![About Page Screenshot](https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1000)
+
+---
+
+## 👨‍💻 ข้อมูลผู้พัฒนา (Developer Information)
+
+* **ชื่อ-นามสกุล:** นายโสภณวิชญ์ แก้วศิลา
+* **รหัสนักศึกษา:** 673450209-9
+* **รายวิชา:** Front-end Web Programming
+* **สาขาวิชา:** Computer and Information Science
+* **คณะ:** คณะสหวิทยาการ
+* **มหาวิทยาลัย:** มหาวิทยาลัยขอนแก่น วิทยาเขตหนองคาย
+* **Repository:** [GitHub - pokemon-app](https://github.com/sophonwit19/pokemon-app.git)
+
+---
+
+## 📦 วิธีการติดตั้งและทดลองรันโปรเจกต์ (Getting Started)
+
+1. คลอนโปรเจกต์ลงมาในเครื่องคอมพิวเตอร์ของคุณ:
+   ```bash
+   git clone [https://github.com/sophonwit19/pokemon-app.git](https://github.com/sophonwit19/pokemon-app.git)
