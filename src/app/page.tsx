@@ -17,14 +17,14 @@ import {
   InputLabel,
   Grid,
   Button,
-  Pagination, // นำเข้า Pagination คอมโพเนนต์ของ MUI
+  Pagination,
 } from "@mui/material";
 
 interface PokemonDetail {
   name: string;
   id: string;
   types: string[];
-  displayId: string; // เก็บเลขลำดับจริงเรียงตัวสำหรับแสดงบนหน้าจอ
+  displayId: string; 
 }
 
 interface PokemonResponse {
@@ -43,21 +43,20 @@ const typePalettes: Record<string, { grad: string; text: string }> = {
 
 export default function Home() {
   const [pokemonList, setPokemonList] = useState<PokemonDetail[]>([]);
-  const [page, setPage] = useState(1); // จัดเก็บสถานะหน้าปัจจุบัน (เริ่มต้นที่หน้า 1)
+  const [page, setPage] = useState(1); 
   const [search, setSearch] = useState("");
   const [selectedType, setSelectedType] = useState("all");
   const [loading, setLoading] = useState(false);
 
-  const limit = 20; // จำนวนโปเกมอนต่อหน้า
-  const totalPokemon = 1351; // จำนวนโปเกมอนทั้งหมดในฐานข้อมูล
-  const countPage = Math.ceil(totalPokemon / limit); // คำนวณจำนวนหน้าทั้งหมด (ได้ 68 หน้า)
+  const limit = 20; 
+  const totalPokemon = 1351; 
+  const countPage = Math.ceil(totalPokemon / limit); 
 
   useEffect(() => {
     let isMounted = true;
     setLoading(true);
-    setPokemonList([]); // ล้างข้อมูลของหน้าเก่าออกทุกครั้งที่เปลี่ยนหน้า เพื่อให้ Skeleton ทำงาน
+    setPokemonList([]);
 
-    // คำนวณหาจุดเริ่มต้นข้อมูล (offset) ของหน้านั้นๆ
     const currentOffset = (page - 1) * limit;
    
     fetch(`https://pokeapi.co/api/v2/pokemon?limit=${limit}&offset=${currentOffset}`)
@@ -69,15 +68,13 @@ export default function Home() {
               const res = await fetch(p.url);
               if (!res.ok) return null;
               const detail = await res.json();
-              
-              // คำนวณรหัส ID แบบเรียงลำดับสัมพันธ์กับหน้าปัจจุบัน
               const sequentialNumber = currentOffset + index + 1;
               
               return { 
                 name: p.name, 
-                id: detail.id.toString(), // ใช้สำหรับดึงไฟล์รูปภาพจากฐานข้อมูลดั้งเดิม
+                id: detail.id.toString(),
                 types: detail.types.map((t: any) => t.type.name),
-                displayId: sequentialNumber.toString() // เลข ID แสดงบนหน้าจอที่เรียงต่อเนื่องจริง
+                displayId: sequentialNumber.toString()
               };
             } catch (err) {
               return null;
@@ -87,7 +84,7 @@ export default function Home() {
        
         if (isMounted) {
           const validDetailed = detailed.filter((item): item is PokemonDetail => item !== null);
-          setPokemonList(validDetailed); // แทนที่ข้อมูลหน้าเดิมด้วยข้อมูลของหน้าใหม่
+          setPokemonList(validDetailed); 
         }
       })
       .catch((err) => console.error(err))
@@ -98,11 +95,10 @@ export default function Home() {
     return () => {
       isMounted = false;
     };
-  }, [page]); // ฟังก์ชันจะทำงานใหม่ทุกครั้งที่ค่า page (เลขหน้า) เปลี่ยนแปลง
+  }, [page]); 
 
   const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     setPage(value);
-    // เลื่อนหน้าจอกลับขึ้นไปด้านบนสุดหลังจากกดเปลี่ยนหน้า
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -115,8 +111,7 @@ export default function Home() {
 
   return (
     <Box sx={{ bgcolor: "#f8fafc", minHeight: "100vh", pb: 6 }}>
-      
-      {/* ส่วนแบนเนอร์หลัก */}
+    
       <Box sx={{ background: "linear-gradient(135deg, #ff4e50 0%, #f9d423 100%)", py: 5, mb: 4, textAlign: "center", boxShadow: "0 4px 20px rgba(255, 78, 80, 0.2)", position: "relative" }}>
         <Button
           variant="contained"
@@ -134,8 +129,7 @@ export default function Home() {
       </Box>
 
       <Container maxWidth="lg">
-        
-        {/* กล่องค้นหา */}
+      
         <Box sx={{ bgcolor: "#ffffff", p: 2.5, borderRadius: 4, boxShadow: "0 10px 25px -5px rgba(0,0,0,0.05)", border: "2px solid #e2e8f0", mb: 5, display: "flex", gap: 2, flexDirection: { xs: "column", sm: "row" } }}>
           <TextField
             fullWidth
@@ -160,11 +154,9 @@ export default function Home() {
           </FormControl>
         </Box>
 
-        {/* แสดงผลการ์ดโปเกมอน */}
         <Grid container spacing={3}>
           {filteredList.map((p) => {
             const palette = typePalettes[p.types[0]] || typePalettes.normal;
-            // ปรับฟอร์แมตจัดวางให้สวยงามด้วย displayId ที่ได้คำนวณแบบรันลำดับต่อเนื่องเอาไว้
             const formattedId = `#${p.displayId.padStart(3, "0")}`;
 
             return (
@@ -204,7 +196,6 @@ export default function Home() {
             );
           })}
 
-          {/* Skeleton โหลดสถานะการทำงาน */}
           {loading && [...Array(limit)].map((_, i) => (
             <Grid size={{ xs: 12, sm: 6, md: 4, lg: 3 }} key={i}>
               <Card sx={{ bgcolor: "#ffffff", borderRadius: 5, border: "2px solid #e2e8f0" }}>
@@ -219,7 +210,6 @@ export default function Home() {
           ))}
         </Grid>
 
-        {/* ส่วนปรับปรุงใหม่: แสดงแถบเลขหน้า Pagination เพื่อสลับหน้าในการดูข้อมูล */}
         {countPage > 1 && (
           <Box sx={{ display: "flex", justifyContent: "center", mt: 6 }}>
             <Pagination 

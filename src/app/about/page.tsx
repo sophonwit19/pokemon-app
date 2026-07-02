@@ -62,7 +62,6 @@ export default function AboutPage() {
 
             <Divider sx={{ my: 3, borderStyle: "solid", borderColor: "#f1f5f9" }} />
 
-            {/* เพิ่มปุ่มสำหรับเชื่อมโยงไปยัง GitHub Source Code */}
             <Box sx={{ textAlignment: "center" }}>
               <Button
                 variant="outlined"
