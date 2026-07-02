@@ -27,10 +27,9 @@
 
 ## 📷 ภาพตัวอย่างแอปพลิเคชัน (Screenshots)
 
-*หมายเหตุ: คุณโสภณวิชญ์สามารถนำลิงก์รูปภาพสกรีนช็อตของแอปพลิเคชันจริงมาใส่แทนที่เครื่องหมายคำพูดในโค้ดด้านล่างนี้ได้เลยครับ*
-
 ### 1. หน้าหลักพร้อมระบบ Pagination และการเรียงลำดับ ID ล่าสุด จนถึงตัวที่ #1351
-![Main Page Screenshot](https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&q=80&w=1000)
+<img width="1806" height="893" alt="image" src="https://github.com/user-attachments/assets/899d34d3-11fe-46ea-8f59-ca433f9717fa" />
+
 
 ### 2. หน้าข้อมูลส่วนตัวผู้พัฒนา (About Page)
 ![About Page Screenshot](https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?auto=format&fit=crop&q=80&w=1000)
