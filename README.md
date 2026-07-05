@@ -37,7 +37,5 @@
 
 
 ## การติดตั้งเพื่อพัฒนาต่อ 
-
-1. คลอนรีโพซิทอรีลงเครื่องคอมพิวเตอร์ของคุณ:
    ```bash
    git clone [https://github.com/sophonwit19/pokemon-app.git](https://github.com/sophonwit19/pokemon-app.git)
